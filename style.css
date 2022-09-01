@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(138, 138, 138);
+}
+
+blockquote {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #000;
+}
+
+blockquote .text {
+    font-style: italic;
+}
+
+blockquote {
+    cursor: pointer;
+}
+
+blockquote:hover {
+    background-color: #000;
+    color: #ffff;
+}
+
+blockquote * {
+    pointer-events: none;
+}
+.character {
+    width: 18rem;
+    background-color: #ffff;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.1);
+}
+
+.character img {
+    width: 100%;
+}
+
+.character .text {
+    padding: 1rem;
+}
