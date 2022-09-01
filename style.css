@@ -32,8 +32,29 @@ blockquote * {
 
 .character img {
     width: 100%;
+    /* h6rem */
+    height: 18rem;
+    /* obft */
+    object-fit: cover;
 }
 
 .character .text {
     padding: 1rem;
+}
+
+
+.model {
+    /* dn */
+    display: none;
+}
+
+#characters {
+    /* df */
+    display: flex;
+    /* fwr */
+    flex-wrap: wrap;
+    /* jcc */
+    justify-content: center;
+    /* gap */
+    gap: 2rem;
 }

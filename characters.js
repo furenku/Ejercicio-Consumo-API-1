@@ -1,6 +1,6 @@
 function formatCharacter(character) {
     const formattedCharacter = {
-        image: character.image,
+        image: character.img,
         name: character.name,
         nickname: character.nickname,
         id: character.char_id
@@ -11,18 +11,23 @@ function formatCharacter(character) {
 }
 
 function createCharacter(character) {
-    const newCharacter = document.createElement("blockcharacter")
-    const text = document.createElement("p")
-    const author = document.createElement("p")
+    
+    const model = document.querySelector(".character.model")
+    const newCharacter = model.cloneNode(true)
+    newCharacter.classList.remove("model")
+    
+    const name = newCharacter.querySelector(".name")
+    const nickname = newCharacter.querySelector(".nickname")
+    const image = newCharacter.querySelector(".image img")
+    
+    
+    name.innerHTML = character.name
+    nickname.innerHTML = character.nickname
 
-    text.classList.add("text")
-    author.classList.add("author")
+    image.setAttribute("src", character.image)
+    // cambiar valor de atributo para texto alternativo:
+    image.setAttribute("alt", character.name)
 
-    text.innerHTML = character.text
-    author.innerHTML = character.author
-
-    newCharacter.append(text)
-    newCharacter.append(author)
 
     newCharacter.setAttribute("data-id", character.id)
 
@@ -38,7 +43,7 @@ function setupInteraction(element) {
 }
 
 function displayCharacter(character) {
-    const container = document.querySelector("#information")
+    const container = document.querySelector("#characters")
 
     const newCharacter = createCharacter(character)
 
@@ -49,18 +54,17 @@ function displayCharacter(character) {
 
 function displayCharacters(characters) {
 
+    console.log( characters )
+
     const formattedCharacters = characters.map(formatCharacter)
 
     formattedCharacters.forEach(displayCharacter)
 }
 
 
-function displayCharacteres( data ) {
-    console.log(data)
-}
 
 function getAndDisplayCharacters() {
-    getData("characters", displayCharacteres)
+    getData("characters", displayCharacters)
     
 }
 
