@@ -1,3 +1,7 @@
+let pageNum = 0
+
+
+
 function formatCharacter(character) {
     const formattedCharacter = {
         image: character.img,
@@ -63,10 +67,39 @@ function displayCharacters(characters) {
 
 
 
-function getAndDisplayCharacters() {
-    getData("characters", displayCharacters)
+// function getAndDisplayCharacters() {
+//     getData({
+//         endpoint: "characters",
+//         pageNum: 3,
+//         elementsPerPage: 3,
+//         displayFunction: displayCharacters
+//     })
     
+// }
+
+
+function loadMore() {
+    console.log("load more", pageNum)
+    
+    getData({
+        endpoint: "characters",
+        pageNum: pageNum,
+        elementsPerPage: 3,
+        displayFunction: displayCharacters
+    })
+
+    pageNum++
 }
 
-getAndDisplayCharacters();
+function setupPagination() {
+    const btn = document.querySelector("#nextpage")
+    btn.addEventListener("click", loadMore)
+}
+
+setupPagination()
+
+
+loadMore()
+// getAndDisplayCharacters();
+
 console.log( "Characters")

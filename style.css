@@ -58,3 +58,12 @@ blockquote * {
     /* gap */
     gap: 2rem;
 }
+
+
+
+#pagination {
+    /* tac */
+    text-align: center;
+    /* p1rem */
+    padding: 1rem;
+}
