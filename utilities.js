@@ -36,6 +36,7 @@ function getData({
         response.json().then(function (data) {
 
             displayFunction(data)
+            
         })
     })
 

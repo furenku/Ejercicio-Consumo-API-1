@@ -1,5 +1,6 @@
 let pageNum = 0
 
+let windowDebounce
 
 
 function formatCharacter(character) {
@@ -95,6 +96,38 @@ function setupPagination() {
     const btn = document.querySelector("#nextpage")
     btn.addEventListener("click", loadMore)
 }
+
+
+function windowScroll() {
+  
+    if( ! windowDebounce ) {
+
+        windowDebounce = setTimeout( function() {
+            
+            console.log("scroll")
+            
+            const container = document.querySelector("#characters")
+            
+            if( container.clientHeight < window.innerHeight+window.scrollY ) {
+                loadMore()
+            }
+            
+            windowDebounce = null
+
+        }, 300 )
+        
+    }
+
+}
+
+function setupInfiniteScroll() {
+    window.addEventListener("scroll", windowScroll)
+}
+
+setupInfiniteScroll()
+
+
+
 
 setupPagination()
 
