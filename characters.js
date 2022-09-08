@@ -1,4 +1,5 @@
 let pageNum = 0
+let elementsPerPage = 6
 
 let windowDebounce
 
@@ -41,7 +42,6 @@ function createCharacter(character) {
 
 function setupInteraction(element) {
     element.addEventListener("click", function (event) {
-
         const el = event.target
         console.log(el.getAttribute("data-id"))
     })
@@ -84,8 +84,8 @@ function loadMore() {
     
     getData({
         endpoint: "characters",
-        pageNum: pageNum,
-        elementsPerPage: 3,
+        currentPage: pageNum,
+        pageSize: elementsPerPage,
         displayFunction: displayCharacters
     })
 

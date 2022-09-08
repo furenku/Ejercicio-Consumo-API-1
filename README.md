@@ -5,3 +5,4 @@ Usaremos la [Breaking Bad API](https://breakingbadapi.com) para ejemplificar el 
 Endpoints usados:
 - quotes
 - characters
+- characters/[id]

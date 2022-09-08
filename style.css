@@ -28,6 +28,13 @@ blockquote * {
     width: 18rem;
     background-color: #ffff;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.1);
+    /* curp */
+    cursor: pointer;
+}
+
+.character * {
+    /* pev */
+    pointer-events: none;
 }
 
 .character img {
