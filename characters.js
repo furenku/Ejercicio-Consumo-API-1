@@ -80,7 +80,6 @@ function displayCharacters(characters) {
 
 
 function loadMore() {
-    console.log("load more", pageNum)
     
     getData({
         endpoint: "characters",
