@@ -1,6 +1,6 @@
 # Ejercicio de Consumo de API
 
-Usamos la [Breaking Bad API](https://breakingbadapi.com)
+Usaremos la [Breaking Bad API](https://breakingbadapi.com) para ejemplificar el consumo de APIs para web.
 
 Endpoints usados:
 - quotes
