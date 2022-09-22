@@ -40,10 +40,23 @@ function createCharacter(character) {
     return newCharacter
 }
 
+function openCharacter( id ) {
+
+    const url = new URL( window.location.href )
+    
+    console.log( "protocol", url.protocol );
+    console.log( "url", url.hostname );
+
+    const newUrl = `${url.protocol}//${url.hostname}:${url.port}/character.html?id=${id}`
+
+    window.location.href = newUrl
+
+}
+
 function setupInteraction(element) {
     element.addEventListener("click", function (event) {
         const el = event.target
-        console.log(el.getAttribute("data-id"))
+        openCharacter( el.getAttribute("data-id") )
     })
 }
 
